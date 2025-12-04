@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0354xl1xvas3"]
+
+[ext_resource type="Script" uid="uid://dkbhwrgnuu3bk" path="res://Entities/Board/regenerate_board.gd" id="1_xgst2"]
+
+[node name="BoardGeneratorReset" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xgst2")
+
+[node name="Generate Layout" type="Button" parent="."]
+layout_mode = 1
+offset_right = 176.0
+offset_bottom = 43.0
+text = "Generate New Layout"
+
+[connection signal="pressed" from="Generate Layout" to="." method="_on_pressed"]

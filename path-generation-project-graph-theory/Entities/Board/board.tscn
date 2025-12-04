@@ -1,0 +1,23 @@
+[gd_scene load_steps=9 format=3 uid="uid://diqiivduggcci"]
+
+[ext_resource type="Script" uid="uid://dlwbf3uwvs3l1" path="res://Entities/Board/board_manager.gd" id="1_wtrgd"]
+[ext_resource type="PackedScene" uid="uid://cmoxudchuidrf" path="res://Entities/Nodes/node_object.tscn" id="2_dtkdv"]
+[ext_resource type="PackedScene" uid="uid://b4bqp046js6bl" path="res://Entities/Nodes/start_building.tscn" id="3_1egux"]
+[ext_resource type="PackedScene" uid="uid://bhdqvk6jkkye5" path="res://Entities/Nodes/location.tscn" id="3_6r6yr"]
+[ext_resource type="PackedScene" uid="uid://byox1ul7oijv2" path="res://Entities/Nodes/1x2_road.tscn" id="4_bvoc4"]
+[ext_resource type="PackedScene" uid="uid://bs0h32i05a0dy" path="res://Entities/Nodes/end_building.tscn" id="4_xcbm7"]
+[ext_resource type="PackedScene" uid="uid://b81ssalviruix" path="res://Entities/Nodes/tree_small.tscn" id="7_gcdiy"]
+[ext_resource type="PackedScene" uid="uid://deinku5x1ay0x" path="res://Entities/Nodes/tree_big.tscn" id="8_ok2to"]
+
+[node name="Board" type="Node3D"]
+script = ExtResource("1_wtrgd")
+node_object = ExtResource("2_dtkdv")
+board_height = 10
+board_width = 10
+number_of_checkpoints = 8
+start_building = ExtResource("3_1egux")
+end_building = ExtResource("4_xcbm7")
+checkpoint_building = ExtResource("3_6r6yr")
+road = ExtResource("4_bvoc4")
+tree_1 = ExtResource("7_gcdiy")
+tree_2 = ExtResource("8_ok2to")

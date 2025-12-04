@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://btca5kbhxo2at"]
+
+[ext_resource type="PackedScene" uid="uid://diqiivduggcci" path="res://Entities/Board/board.tscn" id="1_pag82"]
+[ext_resource type="PackedScene" uid="uid://c0354xl1xvas3" path="res://Entities/Board/board_generator_reset.tscn" id="2_pag82"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2u3o0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_v38uo"]
+sky_material = SubResource("ProceduralSkyMaterial_2u3o0")
+
+[sub_resource type="Environment" id="Environment_7acq2"]
+background_mode = 2
+sky = SubResource("Sky_v38uo")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Game" type="Node3D"]
+
+[node name="Lighting" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = SubResource("Environment_7acq2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Board" parent="." node_paths=PackedStringArray("main_camera") instance=ExtResource("1_pag82")]
+main_camera = NodePath("../Camera3D")
+board_height = 15
+board_width = 15
+number_of_checkpoints = 5
+tree_area_coverage = 0.6
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.42038667, 0.90734506, 0, -0.9073451, 0.42038667, 0, 7.298317, 5.2619133)
+
+[node name="BoardGeneratorReset" parent="." node_paths=PackedStringArray("board") instance=ExtResource("2_pag82")]
+board = NodePath("../Board")

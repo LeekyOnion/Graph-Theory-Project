@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=4 uid="uid://byox1ul7oijv2"]
+
+[ext_resource type="Texture2D" uid="uid://b5b38h7a2gfua" path="res://Assets/Textures/colormap.png" id="1_4py7b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtfm7"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("1_4py7b")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cjbrq"]
+_surfaces = [{
+"aabb": AABB(-0.1, 0, -0.2, 0.2, 0.01, 0.4),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAgAEAAAABAACAAMABQAAAAQAAwAGAAQABAAGAAUAAQAHAAMABgADAAcABwABAAAABwAFAAYAAAAFAAcA"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAD//wAA//8AAP//AAAAAAAAmNn//wAAAAAAAAAAAAAAAGYm/////wAAZib//wAAAACY2f////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_36tkg"]
+resource_name = "path-long_path-long"
+_surfaces = [{
+"aabb": AABB(-0.1, 0, -0.2, 0.2, 0.01, 0.4),
+"attribute_data": PackedByteArray("/xfMrP8XzKz/F8ys/xfMrP8XzKz/F8ys/xcyk/8XMpP/FzKT/xcyk/8XMpP/FzKT/xcyk/8XzKz/F8ys/xcyk/+XMpP/l8ys/5fMrP+XMpP/l8ys/5cyk/+XMpP/l8ys"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_wtfm7"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP///7///wAA////v///AAAAAP+/AAAAAAAA/78AAAAAAAD/////AAAAAP//mNn//wAA//9mJv//AAD//2Ym//8AAP//mNn//wAA//+Y2f///////2Ym////////mNn/////AID//wAA//8AgAAAAAD//wCAZib/////AICY2f//AAA2zv//AAAAADbO//8AAP//Ns6Y2f////82zgAAAAAAADbOZib//wAANs5mJv////82zgAAAAD//zbOAAD/fwAA/38AAP9/AAD/f/9/////f////3////9/////f/+//3//v/9//7//f/+//3////9/////f////3///5LLySWSy8klksvJJZLLySXIpWy0yKVstMilbLTIpWy0")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_cjbrq")
+
+[node name="1x2_Road" type="MeshInstance3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("ArrayMesh_36tkg")
+skeleton = NodePath("")
